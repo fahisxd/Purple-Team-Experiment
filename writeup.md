@@ -32,33 +32,37 @@ okk now, we can start
 
 now lets solve the ctf
 
-![[images/Pasted image 20261117191111.png]]
+![Clinic Portal sign-in page](images/Pasted%20image%2020261117191111.png)
 okeh
 its a login page
-![[images/Pasted image 20261117191226.png]]
+![Lab screenshot](images/Pasted%20image%2020261117191226.png)
 there are many attack vectors
 so lets start exploring
 
-![[images/Pasted image 20261117191557.png]]XSS doesn't work
+![Lab screenshot](images/Pasted%20image%2020261117191557.png)
 
-![[images/Pasted image 20261117191836.png]]
+XSS doesn't work
+
+![Lab screenshot](images/Pasted%20image%2020261117191836.png)
 lets try decode the key
 
 editing the role to admin didnt work
 
 so lets try sqli
-![[images/Pasted image 20261117192344.png]]
+![Lab screenshot](images/Pasted%20image%2020261117192344.png)
 
 didnt go so well either
 
 lets try the calendar feature
-![[Pasted image 20261117193347.png]]![[Pasted image 20261117193354.png]]
+![Lab screenshot](images/Pasted%20image%2020261117193347.png)
+
+![Lab screenshot](images/Pasted%20image%2020261117193354.png)
 
 okeh
 it works, 
 
 but before that i was able to find an SQL injection
-![[Pasted image 20261117193804.png]]
+![Lab screenshot](images/Pasted%20image%2020261117193804.png)
 > [
 >   {
 >     "id": 1,
@@ -77,12 +81,12 @@ well i could definately use Clinic Administrator for exploiting login functions
 
 but we do need email of admin
 
-![[Pasted image 20261117202321.png]]
+![Lab screenshot](images/Pasted%20image%2020261117202321.png)
 we got the columns
 
 password_hash, email, and id
 
-![[Pasted image 20261117203741.png]]
+![Lab screenshot](images/Pasted%20image%2020261117203741.png)
 
 got the password hash
 
@@ -92,7 +96,7 @@ $2b$12$BT/8RsJuf5NoHEo9YYCKTuf2C/2Y38XW4JPoeb7ugbhNmNGYBXcOi
 
 its a bcrypt hash
 
-![[Pasted image 20261117203952.png]]
+![Lab screenshot](images/Pasted%20image%2020261117203952.png)
 
 got the email
 
@@ -100,30 +104,30 @@ admin@clinic.example
 
 now i requested a reset
 
-![[Pasted image 20261117204332.png]]
+![Lab screenshot](images/Pasted%20image%2020261117204332.png)
 
 now i check out the reset_tokens table 
-![[Pasted image 20261117205734.png]]
+![Lab screenshot](images/Pasted%20image%2020261117205734.png)
 we got the token, and idk what to put in bady, but hey we got the reset rigth
 
-![[Pasted image 20261117210437.png]]
+![Lab screenshot](images/Pasted%20image%2020261117210437.png)
 
 we(i) got in
 
-![[Pasted image 20261117210616.png]]
+![Lab screenshot](images/Pasted%20image%2020261117210616.png)
 
 the admin has litrally no priviledge except making other admins
 
 but hey, we got admin acces, now i will invsestiagate the events via SIEM
 
-![[Pasted image 20261118132205.png]]
+![Sentinel alert queue](images/Pasted%20image%2020261118132205.png)
 
 as an l1, there are four alert. i tested one false positive alert to check if UI worked properly
 
-![[Pasted image 20261118132820.png]]
+![Lab screenshot](images/Pasted%20image%2020261118132820.png)
 lets check this one first
 
-![[Pasted image 20261118132844.png]]
+![Lab screenshot](images/Pasted%20image%2020261118132844.png)
 this was me, forgetting my account password during pentest
 
 the detectiong rules suck, ill make better rules in the next session
