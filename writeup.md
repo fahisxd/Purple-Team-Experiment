@@ -32,22 +32,22 @@ okk now, we can start
 
 now lets solve the ctf
 
-![[Pasted image 20261117191111.png]]
+![[images/Pasted image 20261117191111.png]]
 okeh
 its a login page
-![[Pasted image 20261117191226.png]]
+![[images/Pasted image 20261117191226.png]]
 there are many attack vectors
 so lets start exploring
 
-![[Pasted image 20261117191557.png]]XSS doesn't work
+![[images/Pasted image 20261117191557.png]]XSS doesn't work
 
-![[Pasted image 20261117191836.png]]
+![[images/Pasted image 20261117191836.png]]
 lets try decode the key
 
 editing the role to admin didnt work
 
 so lets try sqli
-![[Pasted image 20261117192344.png]]
+![[images/Pasted image 20261117192344.png]]
 
 didnt go so well either
 
